@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "scripts.js",
+  "homepage": "https://AndrewCerveny.github.io/fitlit",
   "scripts": {
     "start": "webpack serve",
     "build": "webpack",
-    "test": "mochapack 'test/**/*.js'"
+    "test": "mochapack 'test/**/*.js'",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist -b master"
   },
   "author": "Turing School of Software and Design",
   "license": "MIT",
@@ -25,6 +28,7 @@
   },
   "dependencies": {
     "chart.js": "^4.0.1",
-    "dayjs": "^1.11.7"
+    "dayjs": "^1.11.7",
+    "gh-pages": "^5.0.0"
   }
 }
