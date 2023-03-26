@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitlit</title>
+  </head>
+  <body class="background-container">
+    <section class="log-in-section hidden" id="logInSection">
+      <form class="log-in-form" id="logInForm">
+        <h1 class="log-in-title">Sign In</h1>
+        <label for="username">Username</label>
+        <input class ="log-in-input" id="username" type="text" name="username" value="" required>
+        <label for="password">Password</label>
+        <input class ="log-in-input" id="password" type="password" name="password" value="" required>
+        <button class="log-in-btn" type="button" name="button" id="logInBtn">Log In</button>
+      </form>
+    </section>
+    <main class="main-container">
+      <section class="welcome-section">
+        <img class="turing-logo" src="./images/logo.png" alt="turing-logo" height="100px" width="100px"/>
+        <div class="header-and-calendar">
+          <header class="welcome-container" id="user-info">
+            <h2 class="user-name">Welcome</h2>
+            <h2 class="user-info">User Info</h2>
+          </header>
+        </div>
+        <button class="sign-out-button" id="signOutBtn" type="button" name="button">Sign Out</button>
+      </section>
+      <section class="fetch-failure-section">
+        <h2 class="fetch-failure-display hidden" id="fetch-failure">Sorry, failed to fetch! Please try again! </h2>
+        <h2 class='post-failure-display hidden' id="post-failure">Sorry, failed to post! Please try again! </h2>
+      </section>
+      <section class="widgets">
+        <button class="sleep" id="sleep" type="submit"><img src="./images/sleeping.png" alt="Sleep Icon"></br>Sleep Widget</button>
+        <div class="sleep-container">
+          <section class="sleep-widget hidden" id="sleep-widget">
+            <ul class="widget-section">
+                <li id="hoursSlept">Hours Slept Today:</li>
+                <li id="sleepQuality">Sleep Quality for Today:</li>
+                <li class="sleep-week" id="sleep-week">Latest Week Data</li>
+                <li id="avgHoursSlept">Your All Time Hours Slept Average:</li>
+                <li id="avgSleepQuality">Your All Time Sleep Quality Average:</li>
+            </ul>
+          </section>
+          <button class="return-to-widget hidden" id="return-to-sleep-widget" type="submit">Return</button>
+        </div>
+        <button class="hydration" id="hydration" type="submit"><img src="./images/water.png" alt="Water Icon"></br>
+          Hydration Widget
+        </button>
+        <div class="hydration-container">
+          <section class="hydration-widget hidden">
+            <ul class="widget-section">
+              <li id="todaysOz">today's intake</li>
+              <li id="weeklyAvg">Hey, Please Select a Date In The Calendar! 👇🏽</li>
+              <form>
+                <label class='hidden' for="calendar"> Calendar:</label>
+                <input type="date" id="calendar" name="calendar" required>
+                <button type="submit" id="dateInput" tabindex="0">Submit</button> 
+              </form>
+              <li id="allTimeAvg">All time average</li>
+            </ul>
+          </section>
+          <button class="back-home return-to-widget hidden" id="toggleHome" type="submit">Return</button>
+        </div>
+        <button class="step-goal widget" id="steps" type="submit"><img src="./images/exercise.png" alt="Running Icon"></br>
+          Step Widget
+        </button>
+        <div class="step-container">
+          <section class="step-goal-widget hidden" id="steps-widget">
+            <ul class="widget-section">
+              <li id="strideLength">Stride Length: </li>
+              <li id="todaysSteps"> Today's Steps: </li>
+              <li id="todaysActivity"> Your Activity For Today: </li>
+              <ul class="week-activity"></ul>
+              <ul class="compare-activity">
+                <li> Your Activity vs Avg of All Users Activity </li>
+                <li id="vsSteps"> Steps Activity:  </li>
+                <li id="vsMinActive"> Minutes Activity:  </li>
+                <li id="vsStairs"> Stairs Climbed: </li>
+              </ul>
+              <li id="todaysMiles"> Miles Walked Today: </li>
+              <li id="stepGoal">Your Daily Step Goal: </li>
+              <li id="avgStepGoal">Average Step Goal for All Users: </li>
+            </ul>
+          </section>
+          <button class="return-to-widget hidden" id="return-to-widget" type="submit">Return</button>
+        </div>
+      </section>
+      <footer class="Activity-form">
+        <form> 
+          <div class="header-form">
+            <h2>Log your activity</h2>
+            <label class="hidden" for="input-date">Calendar Input</label>
+            <input class="input-date hidden" id="input-date" type="date" placeholder="Date">
+          </div>
+          <fieldset class="category-options" id="post-form">
+            <legend class="hidden">Post Your Stats Here</legend>
+            <label for="sleep-input">Sleep</label>
+            <input type="radio" id="sleep-input" name="activity" value="sleep" tabindex="0" aria-checked="false">
+            <label for="hydration-input">Hydration</label>
+            <input type="radio" id="hydration-input" name="activity" tabindex="0" aria-checked="false">
+            <label for="activity-input">Activity</label>
+            <input type="radio" id="activity-input" name="activity" tabindex="0" aria-checked="false">
+            <button type="submit" id="input-btn" name="activity" tabindex="0">Show Form</button>
+          </fieldset>
+          <section class="input-form" id="input-form">
+            <section class="sleep-form hidden">
+              <label for="sleep-stat-hours" class="hidden">Sleep Stat Hours</label>
+              <input class="hours-Slept" id="sleep-stat-hours" type="number" placeholder="Hours slept" min= 0 max=12 step=0.1>
+              <label for="sleep-stat-quality" class="hidden">Sleep Stat Quality</label>
+              <input class="sleep-Quality" id="sleep-stat-quality" type="number" placeholder="Sleep Quality" min=0 max=5 step=0.1>
+            </section>
+            <section class="hydration-form hidden">
+              <label for="hydration-stat" class="hidden">Hydration Stat</label>
+              <input class="number-of-oz" id="hydration-stat" type="number" placeholder="Number of oz drank" max=200>
+            </section>
+            <section class="activity-form hidden">
+              <label for="activity-stat-stairs" class="hidden">Activity Stat</label>
+              <input class="flights-of-stairs" id="activity-stat-stairs" type="number" placeholder="Flights of stairs">
+              <label for="sleep-stat-minutes" class="hidden">Sleep Stat</label>
+              <input class="minutes-active" id="activity-stat-minutes" type="number" placeholder="Minutes active">
+              <label for="sleep-stat-steps" class="hidden">Sleep Stat</label>
+              <input class="number-of-steps" id="activity-stat-steps" type="number" placeholder="Number of steps">
+            </section>
+            <button class="form-submit hidden">Submit Form</button>
+            <section class="post-success-section hidden">
+              <h2 class="post-success-display hidden" id="post-success">Post was successful!</h2>
+            </section>
+            <section class="double-post-error-section hidden" id="double-post-section">
+              <h2 class="double-post-display">This date has already been logged. Please select another date!</h2>
+            </section>
+          </section> 
+        </form>
+      </footer>
+    </main>
+    <aside class="side-bar-container" id="friends-container">
+      <img src="./images/friends2.jpg" alt="Friends Logo" />
+      <section class="friends-info" id="friends-info"></section>
+    </aside>
+    <script src="bundle.js"></script>
+  </body>
+</html>
