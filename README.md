@@ -26,7 +26,7 @@ FitLit uses...
 ## `Architecture`
 FitLit currently uses API data found in the first linked repo. Most of the functionality is housed in our `src` folder, which includes all of our classes (ex: `User-Class.js`) as well as our JS logic (`scripts.js`), HTML (`index.html`), and CSS (`styles.css`). We also have a testing suite, housed in our `test` folder.
 
-## Deployment 
+### `Deployment` 
 
 ### `Contributors:`
 1. Karim Al-Rashdan
